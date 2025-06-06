@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+      <% if @sq_root!=0 %>
+    <h1>Square Root Results</h1>
+    Number
+    <%= @sq_root_new_number %>
+    <br>
+    <br>
+    Square Root
+    <%= @sq_root %>
+    <br>
+    <br>
+        <a href="/square_root/new">Calculate another square root</a>
+      <% else %>
+      <form action="/square_root/results" method="get">
+    <label for="sq_root_new_number">Enter a number</label>
+       <input type="text" name="sq_root_new_number" id="sq_root_new_number" placeholder="What number do you want to take the square of?">
+       <br>
+      <button>Calculate square root</button>
+    </form>
+     <% end %>
+  </html>
