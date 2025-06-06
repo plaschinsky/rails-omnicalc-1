@@ -1,0 +1,16 @@
+<% if @sq_root.present? %>
+  <h1>Square Root Results</h1>
+
+  <p>
+    Number: <%= @sq_root_new_number %><br>
+    Square Root: <%= @sq_root %>
+  </p>
+
+  <a href="/square_root/new">Calculate another square root</a>
+<% else %>
+  <form action="/square_root/results" method="get">
+    <label for="sq_root_new_number">Enter a number</label><br>
+    <input type="text" name="sq_root_new_number" id="sq_root_new_number" placeholder="What number do you want to take the square root of?"><br><br>
+    <button>Calculate square root</button>
+  </form>
+<% end %>
