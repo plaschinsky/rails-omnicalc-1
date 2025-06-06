@@ -1,12 +1,6 @@
-<% if @payment.present? %>
-  <h1>Payment Results</h1>
-  Monthly Payment: <%= number_to_currency(@payment) %><br>
-  <a href="/payment/new">Try another</a>
-<% else %>
-  <form action="/payment/results" method="get">
-    <label>APR:</label><input name="APR_value" type="text"><br>
-    <label>Years:</label><input name="years_value" type="text"><br>
-    <label>Principal:</label><input name="principal_value" type="text"><br>
-    <button>Calculate payment</button>
-  </form>
-<% end %>
+<form action="/payment/results" method="get">
+  <label for="APR_value">APR</label><input name="APR_value" type="text" placeholder="E.g. 5.42"><br>
+  <label for="years_value">Number of years</label><input name="years_value" type="text" placeholder="How many years to repay?"><br>
+  <label for="principal_value">Principal</label><input name="principal_value" type="text" placeholder="How much principal?"><br>
+  <button>Calculate monthly payment</button>
+</form>

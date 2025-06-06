@@ -1,11 +1,6 @@
-<% if @random_value.present? %>
-  <h1>Random Number</h1>
-  Between <%= @user_min %> and <%= @user_max %>: <strong><%= @random_value %></strong><br>
-  <a href="/random/new">Try again</a>
-<% else %>
-  <form action="/random/results" method="get">
-    <label>Min:</label><input name="user_min" type="text"><br>
-    <label>Max:</label><input name="user_max" type="text"><br>
-    <button>Generate</button>
-  </form>
-<% end %>
+<h1>Random Number Generator</h1>
+<form action="/random/results" method="get">
+  <label for="user_min">Minimum</label><input name="user_min" type="text" id="user_min" placeholder="E.g. 1.5"><br>
+  <label for="user_max">Maximum</label><input name="user_max" type="text" id="user_max" placeholder="E.g. 4.5"><br>
+  <button>Pick random number</button>
+</form>

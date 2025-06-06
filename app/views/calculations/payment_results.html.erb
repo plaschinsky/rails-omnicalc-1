@@ -1,0 +1,19 @@
+<h1>Payment Results</h1>
+
+APR<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<%= format("%.4f%%", @APR_value) %>
+<br>
+
+Number of years<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<%= @years_value %>
+<br>
+
+Principal<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<%= @principal_value.to_fs(:currency) %>
+<br>
+
+Payment<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<%= @payment.to_fs(:currency) %>
+<br><br>
+
+<a href="/payment/new">Calculate another payment</a>
