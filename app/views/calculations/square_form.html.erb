@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html>
-      <% if @squared!=0 %>
-    <h1>Square Results</h1>
-    Number
-    <%= @sq_new_number %>
-    <br>
-    <br>
-    Square
-    <%= @squared %>
-    <br>
-    <br>
-        <a href="/square/new">Calculate another square</a>
-      <% else %>
-      <form action="/square/results" method="get">
+<% if params[:sq_new_number].present? %>
+  <h1>Square Results</h1>
+  Number <%= @sq_new_number %><br>
+  Square <%= @squared %><br>
+  <a href="/square/new">Calculate another square</a>
+<% else %>
+  <form action="/square/results" method="get">
     <label for="sq_new_number">Enter a number</label>
-       <input type="text" name="sq_new_number" id="sq_new_number" placeholder="What number do you want to take the square of?">
-       <br>
-      <button>Calculate square</button>
-    </form>
-     <% end %>
-  </html>
+    <input type="text" name="sq_new_number" id="sq_new_number">
+    <br>
+    <button>Calculate square</button>
+  </form>
+<% end %>
